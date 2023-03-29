@@ -1,10 +1,15 @@
 class RomanNumerals:
 
+    equivalences = {
+        10: "X",
+        5: "V",
+        4: "IV",
+    }
+
     def convert(self, amount: int) -> str:
-        if amount == 5:
-            return "V"
-        if amount == 4:
-            return "IV"
+        for key in self.equivalences:
+            if amount == key:
+                return self.equivalences[key]
 
         roman = ""
         for _ in range(amount):
