@@ -8,6 +8,7 @@ class TestRomanNumerals:
         (2, "II"),
         (3, "III"),
         (4, "IV"),
+        (5, "V"),
     ]
 
     @pytest.mark.parametrize("given,expected", numbers)
