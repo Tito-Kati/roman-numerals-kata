@@ -5,20 +5,18 @@ class RomanNumerals:
         9: "IX",
         5: "V",
         4: "IV",
+        1: "I",
     }
 
     def convert(self, amount: int) -> str:
         roman = ""
         rest = amount
 
-        for _ in range(3):
+        while rest > 0:
             for key in self.equivalences:
                 if rest >= key:
                     rest -= key
                     roman += self.equivalences[key]
                     break
-
-        for _ in range(rest):
-            roman += "I"
 
         return roman

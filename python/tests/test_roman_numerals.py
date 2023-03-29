@@ -14,6 +14,7 @@ class TestRomanNumerals:
         (10, "X"),
         (20, "XX"),
         (30, "XXX"),
+        (35, "XXXV"),
     ]
 
     @pytest.mark.parametrize("given,expected", numbers)
