@@ -11,10 +11,12 @@ class RomanNumerals:
         roman = ""
         rest = amount
 
-        for key in self.equivalences:
-            if rest >= key:
-                rest -= key
-                roman += self.equivalences[key]
+        for _ in range(3):
+            for key in self.equivalences:
+                if rest >= key:
+                    rest -= key
+                    roman += self.equivalences[key]
+                    break
 
         for _ in range(rest):
             roman += "I"
