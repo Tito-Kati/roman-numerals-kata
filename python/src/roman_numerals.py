@@ -7,11 +7,15 @@ class RomanNumerals:
     }
 
     def convert(self, amount: int) -> str:
-        for key in self.equivalences:
-            if amount == key:
-                return self.equivalences[key]
-
         roman = ""
-        for _ in range(amount):
+        rest = amount
+
+        for key in self.equivalences:
+            if rest >= key:
+                rest -= key
+                roman += self.equivalences[key]
+
+        for _ in range(rest):
             roman += "I"
+
         return roman
