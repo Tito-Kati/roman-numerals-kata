@@ -9,3 +9,10 @@ class TestRomanNumerals:
         answer = roman_numerals.convert(1)
 
         assert answer == "I"
+
+    def test_returns_II_when_2_given(self):
+        roman_numerals = RomanNumerals()
+
+        answer = roman_numerals.convert(2)
+
+        assert answer == "II"
