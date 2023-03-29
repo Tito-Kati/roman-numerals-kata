@@ -13,16 +13,20 @@ class TestRomanNumerals:
         (9, "IX"),
         (10, "X"),
         (20, "XX"),
+        (29, "XXIX"),
         (30, "XXX"),
         (35, "XXXV"),
         (40, "XL"),
         (50, "L"),
+        (80, "LXXX"),
         (90, "XC"),
         (100, "C"),
+        (294, "CCXCIV"),
         (400, "CD"),
         (500, "D"),
         (900, "CM"),
         (1000, "M"),
+        (2019, "MMXIX"),
     ]
 
     @pytest.mark.parametrize("given,expected", numbers)
