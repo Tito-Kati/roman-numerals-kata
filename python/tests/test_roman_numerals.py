@@ -16,3 +16,10 @@ class TestRomanNumerals:
         answer = roman_numerals.convert(2)
 
         assert answer == "II"
+
+    def test_returns_III_when_3_given(self):
+        roman_numerals = RomanNumerals()
+
+        answer = roman_numerals.convert(3)
+
+        assert answer == "III"
