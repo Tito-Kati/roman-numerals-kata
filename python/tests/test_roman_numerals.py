@@ -1,25 +1,19 @@
 from src.roman_numerals import RomanNumerals
-
+import pytest
 
 class TestRomanNumerals:
 
-    def test_returns_I_when_1_given(self):
+    numbers = [
+        (1, "I"),
+        (2, "II"),
+        (3, "III"),
+        (4, "IV"),
+    ]
+
+    @pytest.mark.parametrize("given,expected", numbers)
+    def test_returns_conversion(self, given, expected):
         roman_numerals = RomanNumerals()
 
-        answer = roman_numerals.convert(1)
+        answer = roman_numerals.convert(given)
 
-        assert answer == "I"
-
-    def test_returns_II_when_2_given(self):
-        roman_numerals = RomanNumerals()
-
-        answer = roman_numerals.convert(2)
-
-        assert answer == "II"
-
-    def test_returns_III_when_3_given(self):
-        roman_numerals = RomanNumerals()
-
-        answer = roman_numerals.convert(3)
-
-        assert answer == "III"
+        assert answer == expected
