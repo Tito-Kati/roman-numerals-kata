@@ -17,6 +17,12 @@ class RomanNumerals:
     }
 
     def convert(self, amount: int) -> str:
+        if amount <= 0:
+            raise Exception("amount must be greater than 0")
+
+        if amount >= 4000:
+            raise Exception("amount must be fewer than 4000")
+
         roman = ""
         rest = amount
 

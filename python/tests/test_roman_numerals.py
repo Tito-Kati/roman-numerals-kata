@@ -36,3 +36,19 @@ class TestRomanNumerals:
         answer = roman_numerals.convert(given)
 
         assert answer == expected
+
+    def test_throws_error_when_number_is_less_than_0(self):
+        roman_numerals = RomanNumerals()
+
+        with pytest.raises(Exception) as error:
+            roman_numerals.convert(0)
+
+        assert str(error.value) == "amount must be greater than 0"
+
+    def test_throws_error_when_number_is_more_than_4000(self):
+        roman_numerals = RomanNumerals()
+
+        with pytest.raises(Exception) as error:
+            roman_numerals.convert(4000)
+
+        assert str(error.value) == "amount must be fewer than 4000"
